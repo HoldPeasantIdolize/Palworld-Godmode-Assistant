@@ -1,0 +1,28 @@
+name: "VERDURE"
+run-name: "Notice"
+"on":
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  pages: write
+  contents: read
+  id-token: write
+jobs:
+  Cedar:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.Sierra.outputs.page_url }}
+    steps:
+      - name: "THISTLE"
+        uses: actions/checkout@v5
+      - name: "creek"
+        uses: actions/configure-pages@v6
+      - name: "Shelter"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+      - name: "hollow"
+        id: Sierra
+        uses: actions/deploy-pages@v5
